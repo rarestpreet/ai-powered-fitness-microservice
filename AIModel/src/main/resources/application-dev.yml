@@ -1,0 +1,9 @@
+spring:
+  mongodb:
+    uri: mongodb://localhost:27017/
+    database: ai_fitness_model_recommendation
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
