@@ -1,0 +1,16 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.aifitness</groupId>
+    <artifactId>ai-fitness</artifactId>
+    <version>1.0</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>user</module>
+        <module>activity</module>
+        <module>aimodel</module>
+        <module>eureka</module>
+    </modules>
+</project>
