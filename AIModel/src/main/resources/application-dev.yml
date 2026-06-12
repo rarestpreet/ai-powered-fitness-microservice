@@ -2,6 +2,8 @@ spring:
   mongodb:
     uri: mongodb://localhost:27017/
     database: ai_fitness_model_recommendation
+  kafka:
+    bootstrap-servers: localhost:9092
 
 eureka:
   client:

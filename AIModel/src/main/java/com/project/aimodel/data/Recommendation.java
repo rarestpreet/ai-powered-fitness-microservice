@@ -11,6 +11,7 @@ import java.util.List;
 @Setter
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Recommendation {
     @Id
     private String id;

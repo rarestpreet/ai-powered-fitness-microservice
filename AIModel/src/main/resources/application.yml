@@ -1,8 +1,14 @@
 spring:
   application:
-        name: AIModel
+    name: AIModel
   profiles:
-    active: dev
+    active: ${PROFILE}
+  kafka:
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      group-id: recommendation-group
+      auto-offset-reset: earliest
 
 server:
   port: 8083
