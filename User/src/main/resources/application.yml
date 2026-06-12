@@ -1,6 +1,8 @@
 spring:
     application:
-        name: UserService
-
+        name: User
     profiles:
-      active: dev
+      active: ${PROFILE}
+
+server:
+  port: 8081
