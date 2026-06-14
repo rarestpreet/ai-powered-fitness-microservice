@@ -1,7 +1,7 @@
 spring:
   mongodb:
     uri: mongodb://mongo:27017/
-    database: ai_fitness
+    database: ai_fitness_activity
   kafka:
     bootstrap-servers: kafka:9092
 
