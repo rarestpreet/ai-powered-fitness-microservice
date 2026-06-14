@@ -2,7 +2,7 @@ spring:
     application:
         name: User
     profiles:
-      active: ${PROFILE}
+      active: ${SPRING_PROFILES_ACTIVE}
 
 server:
   port: 8081
