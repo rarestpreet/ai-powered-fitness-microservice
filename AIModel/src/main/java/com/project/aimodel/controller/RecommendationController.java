@@ -6,7 +6,6 @@ import com.project.aimodel.data.RecommendationRepository;
 import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.NullMarked;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,11 +29,5 @@ public class RecommendationController {
         Recommendation response = recommendationRepo.findByActivityId(activityId)
                 .orElseThrow(() -> new RuntimeException("No recommendation found for this activity: " + activityId));
         return ResponseEntity.ok(response);
-    }
-
-    @GetMapping("/activity")
-    @KafkaListener(topics = "activity")
-    public ResponseEntity<String> checkMessage(@RequestParam Activity activity) {
-        return ResponseEntity.ok(activity.getUserId());
     }
 }
