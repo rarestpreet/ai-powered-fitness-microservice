@@ -3,10 +3,5 @@ spring:
     name: activity-service
   profiles:
     active: ${SPRING_PROFILES_ACTIVE}
-  kafka:
-    producer:
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-
-server:
-  port: 8082
+  config:
+    import: "configserver:${CONFIG_SERVER_URL:http://localhost:8000}"
