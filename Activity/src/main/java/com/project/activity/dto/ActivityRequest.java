@@ -1,6 +1,6 @@
-package com.project.activity.data.dto;
+package com.project.activity.dto;
 
-import com.project.activity.data.ActivityType;
+import com.project.activity.model.ActivityType;
 import lombok.Data;
 
 import java.time.LocalDateTime;

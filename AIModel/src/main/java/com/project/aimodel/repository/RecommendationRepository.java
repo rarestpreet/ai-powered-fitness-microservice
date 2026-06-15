@@ -1,5 +1,6 @@
-package com.project.aimodel.data;
+package com.project.aimodel.repository;
 
+import com.project.aimodel.model.Recommendation;
 import org.jspecify.annotations.NullMarked;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

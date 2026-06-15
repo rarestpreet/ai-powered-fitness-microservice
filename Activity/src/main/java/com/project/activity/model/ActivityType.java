@@ -1,4 +1,4 @@
-package com.project.activity.data;
+package com.project.activity.model;
 
 public enum ActivityType {
     RUNNING,

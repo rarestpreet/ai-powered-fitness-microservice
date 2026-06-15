@@ -1,4 +1,4 @@
-package com.project.aimodel.data;
+package com.project.aimodel.model;
 
 import lombok.*;
 
@@ -17,4 +17,3 @@ public class Activity {
     private Integer caloriesBurned;
     private LocalDateTime startTime;
 }
-

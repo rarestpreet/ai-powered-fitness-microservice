@@ -1,5 +1,6 @@
-package com.project.activity.data;
+package com.project.activity.repository;
 
+import com.project.activity.model.Activity;
 import org.jspecify.annotations.NullMarked;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

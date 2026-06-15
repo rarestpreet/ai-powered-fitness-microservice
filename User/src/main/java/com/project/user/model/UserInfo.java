@@ -1,6 +1,6 @@
-package com.project.user.data;
+package com.project.user.model;
 
-import com.project.user.data.enums.Role;
+import com.project.user.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 

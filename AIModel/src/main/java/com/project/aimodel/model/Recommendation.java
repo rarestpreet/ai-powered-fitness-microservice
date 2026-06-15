@@ -1,4 +1,4 @@
-package com.project.aimodel.data;
+package com.project.aimodel.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
