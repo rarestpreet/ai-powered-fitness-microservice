@@ -8,12 +8,12 @@ import org.springframework.web.client.RestClient;
 public class RestClientConfig {
 
     @Bean
-    public RestClient.Builder webClient() {
+    public RestClient.Builder restClient() {
         return RestClient.builder();
     }
 
     @Bean
-    public RestClient userServiceWebClient(RestClient.Builder builder) {
+    public RestClient userServiceRestClient(RestClient.Builder builder) {
         return builder
                 .baseUrl("http://USER")
                 .build();

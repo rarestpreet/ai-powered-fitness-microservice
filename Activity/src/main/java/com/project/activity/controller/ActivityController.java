@@ -24,7 +24,7 @@ import java.util.List;
 public class ActivityController {
 
     private final ActivityRepository activityRepo;
-    private final RestClient userServiceWebClient;
+    private final RestClient userServiceRestClient;
     private final KafkaTemplate<String, Activity> kafkaTemplate;
 
     @PostMapping
@@ -103,7 +103,7 @@ public class ActivityController {
         try {
             return Boolean.TRUE
                     .equals(
-                            userServiceWebClient.get()
+                            userServiceRestClient.get()
                                     .uri("/users/{userId}/validate", userId)
                                     .retrieve()
                                     .body(Boolean.class)
