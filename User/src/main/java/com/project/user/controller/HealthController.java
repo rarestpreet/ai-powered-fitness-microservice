@@ -10,22 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("test")
+@RequestMapping("/test")
 @NullMarked
 @RequiredArgsConstructor
 @RefreshScope
-public class HealthCheck {
-
-    @Value("${test.value}")
-    private String testValue;
+public class HealthController {
 
     @GetMapping("/health")
     public ResponseEntity<String> testHealth() {
         return ResponseEntity.ok("User service up");
-    }
-
-    @GetMapping("/config")
-    public ResponseEntity<String> testConfig() {
-        return ResponseEntity.ok(testValue);
     }
 }
