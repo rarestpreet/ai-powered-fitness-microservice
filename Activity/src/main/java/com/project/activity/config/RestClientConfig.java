@@ -1,21 +1,27 @@
 package com.project.activity.config;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.client.RestClient;
 
 @Configuration
+@Slf4j
 public class RestClientConfig {
 
-    @Bean
-    public RestClient.Builder restClient() {
+    @Bean("loadBalancedBuilder")
+    @LoadBalanced
+    public RestClient.Builder loadBalancedRestClientBuilder() {
+        log.info("LoadBalancedRestClientBuilder");
         return RestClient.builder();
     }
 
-    @Bean
-    public RestClient userServiceRestClient(RestClient.Builder builder) {
-        return builder
-                .baseUrl("http://USER")
-                .build();
+    @Bean("defaultBuilder")
+    @Primary
+    public RestClient.Builder restClientBuilder() {
+        log.info("RestClientBuilder");
+        return RestClient.builder();
     }
 }

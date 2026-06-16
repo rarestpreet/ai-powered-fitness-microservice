@@ -2,7 +2,6 @@ package com.project.activity.model;
 
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
-import com.project.activity.data.ActivityType;
 
 import java.time.LocalDateTime;
 

@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("test")
 @NullMarked
-public class HealthCheck {
+public class HealthController {
 
-    @GetMapping
+    @GetMapping("health")
     public ResponseEntity<String> testHealth() {
         return ResponseEntity.ok("Activity service up");
     }
