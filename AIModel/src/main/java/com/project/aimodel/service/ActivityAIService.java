@@ -2,8 +2,8 @@ package com.project.aimodel.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.project.aimodel.data.Activity;
-import com.project.aimodel.data.Recommendation;
+import com.project.aimodel.model.Activity;
+import com.project.aimodel.model.Recommendation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,6 +15,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class ActivityAIService {
+
     private final GeminiService geminiService;
 
     public Recommendation generateRecommendation(Activity activity) {

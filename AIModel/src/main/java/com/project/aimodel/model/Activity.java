@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class Activity {
     private String id;
     private String userId;
-    private String type;
+    private ActivityType type;
     private Long duration;
     private Integer caloriesBurned;
     private LocalDateTime startTime;
