@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: user-service
+              predicates:
+                - Path=/user/**
+              uri: lb://USER-SERVICE
+            - id: activity-service
+              predicates:
+                - Path=/activity/**
+              uri: lb://ACTIVITY-SERVICE
+            - id: ai-service
+              predicates:
+                - Path=/recommendation/**
+              uri: lb://AI-SERVICE
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8080/eureka/}
+
+server:
+  port: 8050
+  servlet:
+    context-path: /gateway
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

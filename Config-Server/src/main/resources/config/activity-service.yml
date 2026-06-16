@@ -1,8 +1,21 @@
 spring:
+  mongodb:
+    uri: ${MONGO_DB_URL:mongodb://localhost:27017/}
+    database: ai_fitness
   kafka:
+    bootstrap-servers: ${KAFKA_URL:localhost:9092}
     producer:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8080/eureka/}
 
 server:
   port: 8082
+  servlet:
+    context-path: /activity
