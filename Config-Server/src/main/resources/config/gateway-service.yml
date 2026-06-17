@@ -21,12 +21,8 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_URL:http://localhost:8080/eureka/}
+  instance:
+    hostname: ${GATEWAY_URL:localhost}
 
 server:
   port: 8050
-  servlet:
-    context-path: /gateway
-
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG

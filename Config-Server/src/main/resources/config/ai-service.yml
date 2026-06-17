@@ -17,6 +17,8 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_URL:http://localhost:8080/eureka/}
+  instance:
+    hostname: ${AI_URL:localhost}
 
 server:
   port: 8083
@@ -25,5 +27,5 @@ server:
 
 custom:
   gemini:
-    api-key: ${API-KEY:}
+    api-key: ${API_KEY:}
     url: https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=
