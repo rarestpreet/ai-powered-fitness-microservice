@@ -14,18 +14,12 @@ public class RestClientService {
     }
 
     public boolean validateUser(String userId) {
-        long start = System.currentTimeMillis();
-
-        boolean result = Boolean.TRUE.equals(
+        return Boolean.TRUE.equals(
                 builder
                         .get()
                         .uri("http://USER-SERVICE/user/api/{userId}/validate", userId)
                         .retrieve()
                         .body(Boolean.class)
         );
-
-        System.out.println("Call took: " + (System.currentTimeMillis() - start) + " ms");
-
-        return result;
     }
 }

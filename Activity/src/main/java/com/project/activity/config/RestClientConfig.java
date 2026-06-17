@@ -14,14 +14,12 @@ public class RestClientConfig {
     @Bean("loadBalancedBuilder")
     @LoadBalanced
     public RestClient.Builder loadBalancedRestClientBuilder() {
-        log.info("LoadBalancedRestClientBuilder");
         return RestClient.builder();
     }
 
     @Bean("defaultBuilder")
     @Primary
     public RestClient.Builder restClientBuilder() {
-        log.info("RestClientBuilder");
         return RestClient.builder();
     }
 }

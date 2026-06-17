@@ -1,11 +1,8 @@
 package com.project.aimodel.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestClient;
 
 import java.util.Map;
 
@@ -13,13 +10,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class GeminiService {
 
-    private final RestClient restClient;
-
-    @Value("${custom.gemini.url}")
-    private String geminiApiUrl;
-
-    @Value("${custom.gemini.api-key}")
-    private String geminiApiKey;
+    private final RestClientService restClientService;
 
     public String getAnswer(String question) {
         Map<String, Object> requestBody = Map.of(
@@ -31,12 +22,7 @@ public class GeminiService {
         );
 
         try {
-            return restClient.post()
-                    .uri(geminiApiUrl + geminiApiKey)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .body(requestBody)
-                    .retrieve()
-                    .body(String.class);
+            return restClientService.ai_response(requestBody);
         } catch (HttpClientErrorException e) {
             System.out.println("Status: " + e.getStatusCode());
             System.out.println("Body: " + e.getResponseBodyAsString());
