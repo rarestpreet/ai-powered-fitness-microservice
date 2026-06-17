@@ -8,17 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Activity" />
-        <module name="Eureka" />
-        <module name="AIModel" />
-      </profile>
-      <profile name="Annotation profile for ai-fitness" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
+        <module name="Api-gateway" />
         <module name="User" />
+        <module name="Eureka" />
+        <module name="Config-Server" />
+        <module name="AIModel" />
       </profile>
     </annotationProcessing>
   </component>
@@ -26,6 +20,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AIModel" options="-parameters" />
       <module name="Activity" options="-parameters" />
+      <module name="Api-gateway" options="-parameters" />
+      <module name="Config-Server" options="-parameters" />
       <module name="Eureka" options="-parameters" />
       <module name="User" options="-parameters" />
     </option>

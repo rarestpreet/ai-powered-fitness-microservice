@@ -12,5 +12,7 @@
         <module>activity</module>
         <module>aimodel</module>
         <module>eureka</module>
+        <module>config-server</module>
+        <module>api-gateway</module>
     </modules>
 </project>
